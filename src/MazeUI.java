@@ -135,33 +135,41 @@ public class MazeUI {
 		for (int i=0;i<grid.length;i++) {
 			for (int j=0;j<grid[0].length;j++) {
 				char c = grid[i][j];
-				JLabel label = new JLabel(""+c);
-				label.setHorizontalAlignment(SwingConstants.CENTER);
-				label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-				label.setOpaque(true);
+				JLabel label = null;
+				
 				switch(c) {
 				case 'B':
+					label = new JLabel(""+maze.bChar);
 					label.setForeground(Color.white);
 					label.setBackground(Color.darkGray);
 					break;
 					
 				case 'O':
+					label = new JLabel(""+maze.oChar);
 					label.setForeground(Color.black);
 					label.setBackground(Color.yellow);
 					break;
 				case 'S':
+					label = new JLabel(""+maze.sChar);
 					label.setForeground(Color.white);
 					label.setBackground(Color.red);
 					break;
 				case 'X':
+					label = new JLabel(""+maze.xChar);
 					label.setForeground(Color.white);
 					label.setBackground(Color.green);
 					break;
 				case '+':
+					label = new JLabel(""+c);
 					label.setForeground(Color.white);
 					label.setBackground(Color.blue);
 					break;
+				default:
+					break;
 				}
+				label.setHorizontalAlignment(SwingConstants.CENTER);
+				label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+				label.setOpaque(true);
 				gridPanel.add(label);
 			}
 		}

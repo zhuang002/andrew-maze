@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 public class Maze {
 	char[][] maze = null;
-	char bChar = 0;
-	char oChar = 0;
-	char sChar = 0;
-	char xChar = 0;
+	char bChar = 'B';
+	char oChar = 'O';
+	char sChar = 'S';
+	char xChar = 'X';
 	Location start = null;
 	Location exit = null;
 	Random rand = new Random();

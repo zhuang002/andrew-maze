@@ -82,12 +82,26 @@ public class MazeUI {
 		mnNewMenu.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Generate");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				maze.generateRandomMaze();
+				char[][] grid = maze.getGid();
+				displayGrid(grid);
+			}
+		});
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
 		JMenu mnNewMenu_1 = new JMenu("Run");
 		menuBar.add(mnNewMenu_1);
 		
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Find Path");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				maze.checkBlocks();
+				char[][] grid = maze.getGid();
+				displayGrid(grid);
+			}
+		});
 		mnNewMenu_1.add(mntmNewMenuItem_2);
 		
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Clear");
@@ -142,6 +156,11 @@ public class MazeUI {
 				case 'X':
 					label.setForeground(Color.white);
 					label.setBackground(Color.green);
+					break;
+				case '+':
+					label.setForeground(Color.white);
+					label.setBackground(Color.blue);
+					break;
 				}
 				gridPanel.add(label);
 			}

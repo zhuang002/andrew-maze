@@ -60,6 +60,10 @@ public class Maze {
 	public void generateRandomMaze() {
 		// TODO Auto-generated method stub
 		// generate random size maze and fill with 'B'
+		oChar = 'O';
+		bChar = 'B';
+		xChar = 'X';
+		sChar = 'S';
 		maze = new char[rand.nextInt(18) + 3][rand.nextInt(18) + 3];
 		for (int i = 0; i < maze.length; i++) {
 			for (int j = 0; j < maze[0].length; j++) {
@@ -207,6 +211,17 @@ public class Maze {
 
 		}
 		return al;
+	}
+
+	public void clearPaths() {
+		// TODO Auto-generated method stub
+		for (int i=0;i<maze.length;i++) {
+			for (int j=0;j<maze[0].length;j++) {
+				if (maze[i][j]=='+') {
+					maze[i][j]='O';
+				}
+			}
+		}
 	}
 
 }

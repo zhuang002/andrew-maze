@@ -105,6 +105,13 @@ public class MazeUI {
 		mnNewMenu_1.add(mntmNewMenuItem_2);
 		
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Clear");
+		mntmNewMenuItem_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				maze.clearPaths();
+				char[][] grid = maze.getGid();
+				displayGrid(grid);
+			}
+		});
 		mnNewMenu_1.add(mntmNewMenuItem_3);
 		
 		JLabel lblNewLabel_message = new JLabel("Message");
